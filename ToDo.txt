@@ -1,0 +1,99 @@
+TODO:
+- Make sure Stage is deployed
+- Set seed for DEV/TEST/STAGE 1000000/2000000/3000000
+- Make sure DQE enrollments are OK
+- Ask LaserFiche to refresh after test
+- Add ToDo to Notes
+- Prod Data Repair tool
+- (DONE) Make sure EventTypeMapping table is in DEV/TEST/STAGE 
+- (DONE) Make sure Srini add the table to refresh list
+- (DONE) ACI timesheet, CNE timesheet
+- (DONE) Make sure we have config right for Residential Service
+- have a config in DB to skip win services
+- have a database Nlog target
+- Beeline is offline, need to do it later
+- Invoice
+- (LATER) Make residential service stage point to URL without msw-01
+
+Daily:
+- Production Notificaiton Statistics
+
+Weekly:
+- Beeline
+- ACI timesheet
+- Invoice
+
+Production Support
+  - daily give statistics
+  - Notifications stuck in 95 (ignore, move to 600)
+  - Notifications in 200 (investigate)
+
+Production fix
+  - set up another Notification Environment
+  - Allow Responses without email address to flow into Notification Service 
+    * API
+      - SendConfirmationEmail in Email Helper
+    * SiteB
+    * Residential Service
+    * check Notification Service if checking 'New' or Assuming 'Electric'
+    * do the above in both main and TeamA  
+  - Filter out 'SMB' records 
+  - Not populate LF Event ID metadata for contract upload
+
+USF Phase I
+  - Internal Admin ReEnrollment (done)
+  - CustomerRep Portal change
+  - EventTypeID problem
+
+Phase II
+  - Plan Change/Switch (out of scope)
+  - support 22 market
+  - chagne site B, filter out only send New GasNew Re-enrollment (case insensitive)
+  - change scheduler, filter out only send New GasNew Re-enrollment (case insensitive)
+
+To be decided
+  - verify if Geenrator switch from Email to StandardMail when email is empty
+
+
+
+DEL /F /Q /S \\smbapt-omf-01\umesh\CMI\Notification\Dev\NTS_Generator
+DEL /F /Q /S \\smbapt-omf-01\umesh\CMI\Notification\Dev\NTS_ResponseStatusProcessor
+DEL /F /Q /S \\smbapt-omf-01\umesh\CMI\Notification\Dev\NTS_Scheduler
+DEL /F /Q /S \\smbapt-omf-01\umesh\CMI\Notification\Dev\NTS_Sender
+DEL /F /Q /S \\smbapt-omf-01\umesh\CMI\Notification\Dev\WCFService  
+
+XCOPY C:\A\Notification\Constellation.OneWeb.Notification-Main\Constellation.OneWeb.Notification.Generator\bin\Debug \\smbapt-omf-01\umesh\CMI\Notification\Dev\NTS_Generator
+XCOPY C:\A\Notification\Constellation.OneWeb.Notification-Main\Constellation.OneWeb.ResponseStatusProcessor\bin\Debug \\smbapt-omf-01\umesh\CMI\Notification\Dev\NTS_ResponseStatusProcessor
+XCOPY C:\A\Notification\Constellation.OneWeb.Notification-Main\Constellation.OneWeb.Notification.Scheduler\bin\Debug \\smbapt-omf-01\umesh\CMI\Notification\Dev\NTS_Scheduler
+XCOPY C:\A\Notification\Constellation.OneWeb.Notification-Main\Constellation.OneWeb.Notification.Sender\bin\Debug \\smbapt-omf-01\umesh\CMI\Notification\Dev\NTS_Sender
+XCOPY /s /y C:\A\Notification\Constellation.OneWeb.Notification-Main\Constellation.OneWeb.Notification.Service \\smbapt-omf-01\umesh\CMI\Notification\Dev\WCFService
+
+
+"Exception occured while processing your request. Please contact IT with below inf" +
+    "ormation\n    at System.Data.EntityClient.EntityConnection.GetFactory(String prov" +
+    "iderString)\r\n   at System.Data.EntityClient.EntityConnection.ChangeConnectionStr" +
+    "ing(String newConnectionString)\r\n   at System.Data.EntityClient.EntityConnection" +
+    "..ctor(String connectionString)\r\n   at System.Data.Entity.Internal.LazyInternalC" +
+    "onnection.InitializeFromConnectionStringSetting(ConnectionStringSettings appConf" +
+    "igConnection)\r\n   at System.Data.Entity.Internal.LazyInternalConnection.TryIniti" +
+    "alizeFromAppConfig(String name, AppConfig config)\r\n   at System.Data.Entity.Inte" +
+    "rnal.LazyInternalConnection.Initialize()\r\n   at System.Data.Entity.Internal.Lazy" +
+    "InternalConnection.CreateObjectContextFromConnectionModel()\r\n   at System.Data.E" +
+    "ntity.Internal.LazyInternalContext.InitializeContext()\r\n   at System.Data.Entity" +
+    ".Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)\r\n   at" +
+    " System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()\r\n   at System.Data." +
+    "Entity.Internal.Linq.InternalSet`1.get_InternalContext()\r\n   at System.Data.Enti" +
+    "ty.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()\r\n   at System." +
+    "Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)\r\n   a" +
+    "t Constellation.OneWeb.Notification.DataAccess.NtsMarketNotifyTypeRepository.Get" +
+    "MarketNotifyTypeIDs(Int64 appeventID, Int64 notifyTypeID, List`1 markets) in C:\\" +
+    "SMB\\Notification\\Constellation.OneWeb.Notification-Main\\Constellation.OneWeb.Not" +
+    "ification.DataAccess\\Implementations\\NtsMarketNotifyTypeRepository.cs:line 82\r\n " +
+    "  at Constellation.OneWeb.Notification.DataAccess.NtsMarketNotifyTypeRepository." +
+    "GetMarketNotifyTypeIDs(Events appevent, NotifyTypes notifyType, List`1 markets) " +
+    "in C:\\SMB\\Notification\\Constellation.OneWeb.Notification-Main\\Constellation.OneW" +
+    "eb.Notification.DataAccess\\Implementations\\NtsMarketNotifyTypeRepository.cs:line" +
+    " 76\r\n   at Constellation.OneWeb.Notification.Service.NotificationServiceInternal" +
+    ".InsertNotificationTask(NotificationRequest notificationRequest) in C:\\SMB\\Notif" +
+    "ication\\Constellation.OneWeb.Notification-Main\\Constellation.OneWeb.Notification" +
+    ".Service\\NotificationServiceInternal.svc.cs:line 98"
