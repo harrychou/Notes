@@ -1,1 +1,115 @@
-test > this is my test
+Ch1 What is the Shell
+
+	$: command prompt - where waiting the user's command
+	\: root directory
+	~: user's home directory
+
+	command history: down/up arrow keys
+	
+	in windows: use cygwin
+
+	date command: output current date
+	cal command: output calendar
+		- in cygwin: need to install package util-linux
+		- cal -3 : output 3 months
+		- cal 2013 : output whole 2013
+	df command:
+		- display filesystem
+	free command:
+		- display memory usage
+	exit command:
+		- leave shell environment
+
+	virtual console/terminals
+		- Ctrl F1 to F6
+		- Ctrl F7 belong to GUI
+
+Ch2 Navigation
+	
+	in Linux: everything is a file
+	
+	pwd: present working directory
+	ls: list
+		- absolut path
+		- relative path
+	cd: change directory
+		- to change to another user cd ~harrychou
+
+Ch3 Explore
+
+	linux command format
+		command -options arguments
+
+	ls
+		- -al options
+		- understand the long format
+	file - determin file type
+	less 
+		- display file content
+		- command for less content page
+			* f: forward one page
+			* b: back one page
+			* g: beginning of file
+			* G: end of file
+			* /pattern: search
+			* n: next match
+			* q; quit
+		- less is more
+
+	tour of common locations /, /bin, /boot, 
+		- /bin: binary for boot time
+		- /boot: linux kernel
+		- /sbin
+		- /usr/bin ...
+
+	symbolic link 
+
+Ch4 Manipulate files and directories
+
+	cp : copy
+	mv ; move/rename
+	mkdir : make directory	
+	rm : remove
+	ln : create link (hard/symbolic)
+
+	to copy directory, but only replace with newer or non-exit
+		- cp -u directory1/* directory2
+
+	wildcard:
+		*
+		?
+		[abc] : a or b or c
+		[0-9]
+		[[:upper:]]* : any file begins with uppercase letter
+		[![:digit:]]* : any file that does not begin with digit
+		[[:lower:]123] : any file start with lowercase or 1 or 2 or 3
+
+  mkdir
+		- can create multiple directories at once
+
+	copy
+		- can copy file or directories
+		-i require confirmation
+		-u only update (newer or non-exist in target)
+
+	mv
+		- can be used for rename
+		- can move mulitple files at once (mv file1 file2 dir2)
+		-u only move when the file is newer (if exists at all)
+	
+	rm
+		- can remove multiple items
+		-r to remove non-empty directory
+
+	ln
+		-s create symbolic link
+
+Ch5 Working with Commands
+
+	type : get the type of command
+	which : where is the executable of the command
+	man : manual page
+	apropos : display a list of apropriate commands
+	info : display info
+	whatis : very brief description
+	alias : create alias of a command
