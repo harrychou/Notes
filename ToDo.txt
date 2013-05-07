@@ -1,19 +1,27 @@
 TODO:
-- Make sure Stage is deployed
-- Set seed for DEV/TEST/STAGE 1000000/2000000/3000000
-- Make sure DQE enrollments are OK
-- Ask LaserFiche to refresh after test
-- Add ToDo to Notes
-- Prod Data Repair tool
+- (PENDING - NO ACCESS) DEV environment push 
+- TEST Task_ID 2000010 (RES_ID 907655) generator error
+- Prod Data Repair tool for sending Prod responses without email address
+- Prod Data Repair tool for generator Siebel service size issue
+- Ask LaserFiche to refresh after stage is set
+- Once verified, ask Umesh to sync all servers for Notificaiton WCF service
+- (Done) Make sure DQE enrollments are OK (Matt Wade need to work with Ray)
 - (DONE) Make sure EventTypeMapping table is in DEV/TEST/STAGE 
 - (DONE) Make sure Srini add the table to refresh list
 - (DONE) ACI timesheet, CNE timesheet
 - (DONE) Make sure we have config right for Residential Service
+- (DONE) Make sure Stage is deployed
+- (DONE) Set seed for DEV/TEST/STAGE 1000000/2000000/3000000
+- (DONE) Update contract naming convention ...
+- (DONE) Add ToDo to Notes
+- (DONE) TEST environment push, WCF should talke to SMBTEST, take out TestCMI
 - have a config in DB to skip win services
 - have a database Nlog target
 - Beeline is offline, need to do it later
 - Invoice
 - (LATER) Make residential service stage point to URL without msw-01
+- (LATER) Set sequence for ResponseID?
+
 
 Daily:
 - Production Notificaiton Statistics
