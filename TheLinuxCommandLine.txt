@@ -113,3 +113,49 @@ Ch5 Working with Commands
 	info : display info
 	whatis : very brief description
 	alias : create alias of a command
+
+	types of commands:
+	- executable: compiled or script
+	- builtin: command built into shell itself
+	- shell function
+	- alias
+
+	type:
+		- show the type of command
+
+	which
+		- show where the command is from
+		- only works for executable
+
+	ways to get help on command
+		- help (help ls)
+		- --help (ls --help)
+		- man (man ls)
+		- apropos (apropos search_str)
+			* same as man -k 
+		- whatis 
+			* display very short description
+		- info
+			* display the info page
+
+	other help info
+		- /usr/share/doc
+		- to read .gz file, use zless
+
+	run multiple commands in one line
+		- command1; command2; command3;
+
+	make them into alias
+		- alias foo='cd /usr; ls; cd -'
+		- before making alias, use type to check if the name has already been used
+		- unalias : to remove alias
+	
+	cd -
+		* go back to previous directory
+
+
+
+
+
+
+
