@@ -224,7 +224,20 @@ Ch6 Redirection
 		- ls /bin /user/bin | sort | uniq | grep zip
 			* same as above
 			* grep zip will list out only lines with 'zip'
-		- 
+		- head/tail: print the first or last couple lines
+			head -n 5 filename.txt
+			ls /usr/bin | tail -n 5
+			tail -f /var/log/messages
+				* this will monitor the dynamic messages file, -f will force to update
+		- tee output to file while continue to stdout
+			ls /usr/bin | tee out.txt | grep zip
+			(will output all ls result to out.txt, while only to screen those with zip)
+
+	linux has tools that you can actually build the things you want instead of things given to you by windows
+
+Ch7 Seeing the world as the shell sees it
+
+ 
  
 	
 
