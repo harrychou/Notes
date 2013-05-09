@@ -159,8 +159,74 @@ Ch6 Redirection
 	sort - sort lines of text
 	uniq - report or omit repeated lines
 	wc - word count
+	grep - print matched lines
+	head - output the first part of a file
+	tail - output the last part of a file
+	tee - read from std input and output to stdout and files
 
+	standard input/output/error
+		- everything in Linus is a file
+		- stadnard input/output/error are all files
+		- standard input connects to keyboard
+		- standard output/error connect to screen
 
+	redirect stdout
+		- redirect standard output to file
+		- even command error has empty standard output
+			> empty.txt to create an empty file
+		- to append to file, use >> 
+
+	redirect stderr
+		- use file descriptor 
+			* stdin 0
+			* stdout 1
+			* stderr 2
+		- to redirect standard error
+			ls -l /path 2> err.log
+		- to redirect both output and standard error
+			ls -l /path > output.txt 2>&1
+		- another way ...
+			ls -l /path &> out.txt
+	  - to throw out the output 
+			redirect to /dev/null	
+	
+	cat
+		- concatenate files
+		- reads one or more files and output to stdout
+		- example
+			cat file* > file3
+			(reads all files start with 'file' and output to file3)
+		- if no arguments, cat reads from stdin (keyboard)
+			(use Ctrl-D for EOF)
+		- car < file3 > file4
+			reads from file3 ... and output to file4 
+
+	pipeline
+		- any command that reads from stdin and output to stdout is using pipeline
+		- pipeline is a shell feature
+
+	filters
+		- special kind of command that use pipeline 
+		- examples
+			ls /folder1 /folder2 | sort | less
+			(sort is the filter here - display all files in folder1 and folder2, sort the output, and use less to display)
+		- sort
+		- uniq
+		- wc: print line/word/byte counts
+		- grep: print matching lines
+				* -i (case insensitive)
+				* -v (print NOT matching lines)
+		- ls /bin /usr/bin | sort | uniq | wc -l
+			* get all files in two folders
+			* sort them
+			* take out duplicates
+			* get the number of lines
+		- ls /bin /user/bin | sort | uniq | grep zip
+			* same as above
+			* grep zip will list out only lines with 'zip'
+		- 
+ 
+	
 
 
 
