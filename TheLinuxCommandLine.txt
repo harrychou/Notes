@@ -153,7 +153,12 @@ Ch5 Working with Commands
 	cd -
 		* go back to previous directory
 
+Ch6 Redirection
 
+	cat - concantenate file
+	sort - sort lines of text
+	uniq - report or omit repeated lines
+	wc - word count
 
 
 
