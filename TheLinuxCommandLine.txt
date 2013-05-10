@@ -237,8 +237,55 @@ Ch6 Redirection
 
 Ch7 Seeing the world as the shell sees it
 
- 
- 
+	echo: display a line of text
+	
+	exapnsion: shell expand special string into list of strings
+		- echo *
+			(print out all files in the directory, * was expanded, then echo was executedo) 
+		- pathname expansion
+			echo D*
+			echo *s
+			echo [[:upper:]]* (all files whose names start with uppercase
+			echo /usr/*/share
+			- to show hidden files
+				ls -d .[!.]?*
+		- tild expansion
+			~ will be expanded to current user's home directory
+			~username will be expanded to the specific user's home dir
+		- arithmetic expansion
+			echo $((2+3))
+			echo $((3**2)) // output 9
+		- brace expansion
+			echo file{A,B,C}
+			echo file{1..12}
+			echo test{Z..A}
+			echo a{A{1,2},B{3,4}}b  // aA1b aA2b aB3b aB4b
+			mkdir {2009..2011}-0{1..9} {2009..2011}-{10..12}  // will create folder for all 2009-2011 months
+		- parameter expansion
+			echo $USER
+			- to get all environment variables
+				printenv
+		- command substitution
+			echo $(ls)
+			ls -l `which cp`
+
+	quoting: to avoid unwanted expension
+		- unwanted expansion
+			echo this is    a test (multiple spaces are taken out)
+			echo total is $100 ($1 will be expanded to variable, which is undefined)
+		- double quote
+			avoid exception: $, \ , `
+		- single quote
+			avoid all expansions
+		- escaping character
+			echo "total for $USER is \$500"
+
+Ch8 Keyboard tricks
+
+	clear - clear terminal
+	history - show last 500 commands
+
+		 
 	
 
 
