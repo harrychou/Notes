@@ -65,4 +65,11 @@ Ch2 Command
     Retrieve Exchange mailboxes Get-Mailbox
     Create a new Exchange mailbox New-Mailbox
 
+Ch3 Help System
+
+  Get-Help event 
+    - get commands about event
+    - you can use man or help 
+      * function wrapper for Get-Help with filter of More
+      * less typing, so very useful
   
