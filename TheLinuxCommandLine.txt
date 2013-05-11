@@ -285,6 +285,53 @@ Ch8 Keyboard tricks
 	clear - clear terminal
 	history - show last 500 commands
 
+	Command Line Editing:
+	- Readline - the library to handle editing
+	- Keys for move:
+		Ctrl-A: move to beginning
+		Ctrl-E: move to end
+		Ctrl-F/B : move one char foward/back
+		Alt-F/B : move one word
+	- keys for kill/yank
+		Ctrl-K: kill to the end
+		Ctrl-U: kill to the begin
+		Alt-D: kill to the word
+		Alt-Backspace: kill to the begin of word
+		Ctrl-Y: yank
+	
+	completion:
+	- tab is enough
+	- completion can complete
+		- filename/pathname
+		- variables $US
+		- username $userna
+		- command (if first word of line)
+		- hostname @hostname (if hostname in /etc/hosts)
+
+	history
+	- kept in .bash_history file in home directory
+	- 500 commands
+	- use grep to find the ones you need
+		history | grep ls
+	- run a specific item
+		!88 or whatever number
+	- to serach history
+		Ctrl-R
+		Ctrl-J to copy
+		keep Ctrl-R to keep searching
+		there are others to try
+	- !88 is the history expansion
+		!! to repeat the last command
+
+	use script to record the bash session
+	- include commands and the output
+	- ctrl chars are included, which is very annoying
+	- can use cat to not show the ctrl chars
+
+Ch9 Permissions
+
+
+
 		 
 	
 
