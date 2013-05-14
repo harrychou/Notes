@@ -330,7 +330,67 @@ Ch8 Keyboard tricks
 
 Ch9 Permissions
 
+	Multiuser system: require permission settings
+	
+	id - display user identitfy
+	chmod - change file's mode
+	umask - set the default file permission
+	su - run a shell with super user permission
+	sudo - run a command with super user permission
+	chown - change owner
+	chgrp - change file's group ownership
+	passwd - change user's password
 
+	concepts:
+	- user can own file
+	- user can belong to a group
+	- group can own file
+	- access can also be granted to everybody (the world)
+
+	id
+	- get the id of current user
+	- uid: user id
+	- gid: primary group id
+	- most user's settings are defined in /etc/passwd
+	- most group things are defined in /etc/group
+	- passwords are defined in /etc/shadow
+	- modern Linux assign users to his/her own group to make permission mgment easier
+
+	file mode
+	- the first column of ls -l (long format)
+	- filetype
+		* - regular, d directory, l symbolic link, c character special file (terminal/modem), b block special file (CD-ROM)	
+	- rwx
+		* for file: read/write/execute
+		* for directory: list/create/entered
+		* to execute script, you need read permission too
+	- default file filemode
+		-rw-r--r--
+	- default folder filemode
+		drwxr-xr-x 
+
+	chmode
+	- change mode (permission)
+	- only file's owner or super user can do that
+	- two ways to specify mode change
+		* octal number
+		* symbolic representation
+	- octal 
+		* 0 ---, ..., 4 r--, 5 r-x, 6 rw-, 7 rwx
+	- symbolic	
+		* u user/owner, g group, o outside/world, a all
+		* u+x -> add x to owner
+		* u-x -> take out x from owner
+		* +x (a+x) -> give x to all (owner/group/world) 
+		* o-rw -> take r and w out from world
+		* go=rw -> set group and world to rw
+		* u+x, go=rw => add execution to owner, make sure group and world have r and w
+	- when doing -recursive with chmod, all files and subdirectories will have the same permission, which normally should not be the case
+	- there are some special permissions
+		page 86... I doubt I need to know it
+
+	change identity
+	
 
 		 
 	
