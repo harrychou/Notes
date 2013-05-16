@@ -72,4 +72,15 @@ Ch3 Help System
     - you can use man or help 
       * function wrapper for Get-Help with filter of More
       * less typing, so very useful
-  
+    - Get-Help *Log*
+      will display all commands with Log
+
+....
+
+  How to retrieve value from registry?
+    - to find all mapped registry hive
+      Get-PSDrive
+    - cd HKLM: 
+    - cd to the directory
+    - to list all entries in the directory
+      Get-ItemProperty -Path .
