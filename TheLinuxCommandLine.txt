@@ -390,7 +390,7 @@ Ch9 Permissions
 		page 86... I doubt I need to know it
 
 	change identity
-	
+	- su: change session to super user	
 
 		 
 	

@@ -1,0 +1,36 @@
+Test Driven JavaScript Note
+
+Ch01 Epi01
+
+	Professional Javascript Development Practice
+	- support all browser
+	- team developed' and maintained'
+	- easy to maintain
+
+	Channels
+	- Live channel (creating the app)
+	- Lessions learned
+
+	GitHub, encourage to fork and participation
+
+	App: weewikipaint
+
+	Git setup
+	* git init
+	* create README
+	* git add
+	* git commit
+
+	WebStorm
+	* create 
+	* create .gitingore file to ignore workspace.xml file
+
+	Agile Practice
+	* MMF (Minimum Marketable Feature)
+	* User Stories
+	* Engineering Tasks
+
+	Jake
+	* Javascript Make
+	* tasks
+	* dependency ...
