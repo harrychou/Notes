@@ -1,4 +1,10 @@
 TODO:
+- Personal
+  * Update Church off calendar
+  O Ask Tsai Ing De about how to donate
+  * Chinese School rewards sheet
+  * Invoice
+  * Church bulletin
 - Prepare for production release
   O update view chagne in Main
   O update deployment sheet
