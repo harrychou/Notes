@@ -1,0 +1,79 @@
+http://git-scm.com/book
+Pro Git
+
+1. Getting Started
+
+1.1 About Version Control
+
+	A VCS allows you to: 
+	* revert files back to a previous state, 
+	* revert the entire project back to a previous state, 
+	* review changes made over time, 
+	* see who last modified something that might be causing a problem, 
+	* who introduced an issue and when, 
+	* and more. 
+
+	Types of VCS (version control system)
+	* Local http://git-scm.com/figures/18333fig0101-tn.png
+		- RCS
+	* Central http://git-scm.com/figures/18333fig0102-tn.png
+		- CVS/Subversion/Perforce
+		- Single Server contains all versions
+		- Adv
+			* collaboration
+			* easy to admin
+		- Disadv
+			* single point of failure 
+	* Distributed http://git-scm.com/figures/18333fig0103-tn.png
+		- Git/Mercurial/Bazar/Darcs
+		- Each client have full mirror of the respository
+		- Each client or server can be used to restore/copy to each other
+		- Enable more flexible workflow within project
+
+1.2 A Short History of Git
+
+	From Linux project
+	* from 1991 to 2002 - just patches and archive files
+	* from 2002 - use proprietary DVCS called BitKeeper
+	* 2005 - BitKeeper company stop provide it free of charge
+		- Linus Torvalds started developing their own tool
+	* goals
+		- speed
+		- simple design
+		- strong support for non-linear development
+		  (thousand of parallel branches)
+		- fully distributed
+		- able to handle big project (Linux Kernel, speed and data size)
+
+1.3 Git Basics
+
+	Git Basic
+	* Important to learn basics of how Git works
+	* Git's way of thinking/handling info are very different - source of confusion
+
+	What's different of Git from others
+	* Other think in terms of files and changes to the files
+		- http://git-scm.com/figures/18333fig0104-tn.png
+	* Git thinks of its data more like a set of snapshots of a mini filesystem
+		http://git-scm.com/figures/18333fig0105-tn.png
+		- every commit is like taking a snashop
+		- if one file has no change, just store pointer to previous file instead save the new file
+		- Git more like a mini filesystem with some incredibly powerful tools built on top of it
+		- the benefits will be covered when discussing Git branching
+
+  Nearly Every Operation Is Local http://git-scm.com/book/en/Getting-Started-Git-Basics#Nearly-Every-Operation-Is-Local
+
+1.4 Installing Git
+1.5 First-Time Git Setup
+1.6 Getting Help
+1.7 Summary
+
+2. Git Basics
+2.1 Getting a Git Repository
+2.2 Recording Changes to the Repository
+2.3 Viewing the Commit History
+2.4 Undoing Things
+2.5 Working with Remotes
+2.6 Tagging
+2.7 Tips and Tricks
+2.8 Summary

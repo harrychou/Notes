@@ -1,25 +1,10 @@
 TODO:
 - Personal
-  O Update Church off calendar
-  O Ask Tsai Ing De about how to donate
-  O Chinese School rewards sheet
-  O Invoice
   * Church bulletin
-- Prepare for production release
-  O update view chagne in Main
-  O update deployment sheet
-  O ask Josephine if there is any other update
-  O why Scheduler will stuck in Y??? No idea. Keeps watching ....
-  O diff prod config files
-  * make sure WCF service config is OK
-  * review playbook again
-  * 
-  * prepare production deployment package 
-    (use Release build, copy to Umesh folder, verify/compare the URLs for the last time ... )
-  * make sure Notification App is in the playbook
-- Notification Prod, why 200?
-- Update the playbook and deployment spreadsheet to add Notification WCF Service and Notification Win Services
-- SiteB unsubscribe change need to be taken out
+- Work
+  * Notificaiton TeamA Branch
+    - Setup Plan Change Notification
+  * SiteB unsubscribe change need to be taken out
 
 - Prod Data Repair tool /f/jfor sending Prod responses without email address
 - Prod Data Repair tool for generator Siebel service size issue
@@ -31,7 +16,6 @@ TODO:
 - Invoice
 
 - (LATER) 
-  Make residential service stage point to URL without msw-01
   Set sequence for ResponseID?
 
 - (DONE)

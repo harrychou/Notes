@@ -1,4 +1,4 @@
-# Notification 2nd Phase Design Note #
+# Notification 2nd Phase Design Note
 
 Scope:
 
@@ -24,48 +24,66 @@ Scope:
   - Unsubscribe enhancement
   - Pause/Stop/Continue notifications
 
-## UI ##
+## UI
 
-## New Notification Types  ##
+## New Notification Types
 
 Plan Change Confirmation
 
+* Which Plan Change Confirmation
+	- trigger: internal admin
+	- push event from Internal Admin 
 * Which App initiate the notification?
-* Samples?
-* existing DDS feature?
+	- Internal Admin
 * same work flow as confirmation email?
-* additional data elements needed?
-
-Environment Disclosure
+* We don't want to resend the welcome packets for plan change (o)
+	- need to let call center know plan change is going to send out Welcome packet
+	
+Environment Disclosure (ED)
 
 * Is it a separate notificaiton or just an attachment?
+	- Example: every quarter, a ED is sent out to a specific market, in specific frequent
 * Where can I find a sample doc?
+	- no, very static information, ... Canada, average variable plan ... 
 * Should we save it in LaserFiche? Not associate with customer? Or, each customer got a separate copy?
 
 Reject Notice
 
-* When do we reject? Which apps are involved? Who initiate the process?
+* When do we reject? 
+	- Utility reject
+* Which apps are involved? Who initiate the process?
 * Which Status signals reject?
+	- 55 (Enrollment Reject)
+* Reject letter can be for currect customer
+	- That can result to a different reject letter 
 
 RAF
 
-* Sample?
+* Samples
+	- after 30/90 days, send out a notice
 
 Social Sale
 
-* Email to find
+* Email to friends 
+* Just a email tool
 
-## ERCOT ##
+## ERCOT
 
 * Credit Check Notification
 * Contract Generation Issues?
 * This is OK
 
-## Others ##
+## Others
 
 Segmentation of Customer
 
 Error Hadling
+
+Servicing Renewal Notification
+
+* Renewal Stuff, at the end of Renwal Segmentation, there will be notifications
+* 
+
 
 
 
