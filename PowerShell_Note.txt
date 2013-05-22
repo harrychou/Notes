@@ -72,4 +72,64 @@ Ch3 Help System
     - you can use man or help 
       * function wrapper for Get-Help with filter of More
       * less typing, so very useful
-  
+    - Get-Help *Log*
+      will display all commands with Log
+      if only one match, will just display help for that command
+    - Help *EventLog* will do the same thing as Get-Help
+
+  Ctrl-C: break
+
+  Get-Command
+    - Gcm
+    - only list for comdlets
+    - Help is searching in help document
+
+  Understanding Help
+    - Parameters
+      * Optional
+      * Mandatory
+        (Powershell will prompt you if you don't supply them)
+    - A comdlet can have more than one set of parameters
+    - most comdlet also accept a set of CommonParameters
+      -Verbose
+      -Debug
+      -WarningAction
+      -WarningVariable
+      -ErrorAction
+      -ErrorVariable
+      -OutVariable
+      -OutBuffer
+    - Positional parameters
+    - Best practice: spell out parameter names until you are familiar with the comdlet
+    - Help .... -full 
+      (to get full document instead of summary)
+    - some parameters are switch type, you cannot provide value for it
+      (either present or not)
+    - type of parameter
+      * String
+      * Int/Int32/Int64
+      * DateTime
+        05-13-2013
+      * string[]
+        - provided by comma-separated strings
+        - or read from other comdlet's output
+          Get-EventLog Application -Computer (Get-Content list.txt)
+          (very useful)
+        - or for mandatory parameter just leave empty, the Powershell will prompt for it
+
+  Access about topics
+    - Help *common*
+
+  Online help
+    - Help Get-EventLog -online
+
+  How to retrieve value from registry?
+    - to find all mapped registry hive
+      Get-PSDrive
+    - cd HKLM: 
+    - cd to the directory
+    - to list all entries in the directory
+      Get-ItemProperty -Path .
+
+
+Ch 4 Pipeline : connecting commands
