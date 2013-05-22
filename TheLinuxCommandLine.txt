@@ -391,6 +391,43 @@ Ch9 Permissions
 
 	change identity
 	- su: change session to super user	
+		su -l user
+		* -l: create a login shell
+			setting new environment and everything
+		* su -
+			use superuser, setting new login shell
+		* exit will go back to previous shell
+	- sudo: change identity only for the command
+		* allow ordinary user to temporary has the permission to do superuser work
+		* sudo does not require to know superuser's password
+			admin need to configure your account to run that specific command
+		* does not create new shell, nor does it access
+		* sudo -l 
+			to list all commands to run, on Mac, it is (ALL)
+		* sudo by default, trust you for several minites for subsequent sudo commands
+
+	Windows vs. Linux security
+	- Windows if running as administrator, you are becoming administrator
+	- Linux, you need to sudo to run certain admin tasks, but you still are the oridnary user
+	- Linux is more restricted in a sense
+	- in the past, Linus use su, and force people to have root account
+	- modern Linux like Mac and Ubuntu disable root by default, and use sudo to grant permission
+
+	chown
+	- change ownership of file
+	- to share a file to a spcific person
+		* first copy the file to that person's home directory
+		* then set the ownership of the file to that person
+			sudo chown tony: ~tony/thefile.txt
+
+	How to share a directory between users
+	- sudo mkdir /usr/local/share/Music
+		(create a directory on shared directory)
+		the directory's ownership will be root (we use sudo to create it)
+	- 
+
+
+
 
 		 
 	

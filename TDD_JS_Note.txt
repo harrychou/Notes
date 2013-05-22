@@ -34,3 +34,46 @@ Ch01 Epi01
 	* Javascript Make
 	* tasks
 	* dependency ...
+
+Ch01 E02
+
+	Build script/automation
+
+	Static Code Analysis
+	* Lint
+	* Especially important to JavaScript dev
+
+	Jake -> Default task
+
+	Automate Linting
+	* LintRunner
+		- use JSHint underneath, can switch to others
+	* Lesson Learned episode linked
+	
+	Use Jake to run lint as defalt task
+	* reqire the lint_runner.js
+	* run the validateFile()
+	* npm install jshint
+		- npm puts all files under node_module, which is very easy to share
+	* include all js files
+	* exclude node modules
+	* setup options for JSHint
+
+Ch01 E03
+
+	Configure JSHint options
+	* make it strict first, loose it later
+
+	JS Hoisting causing JSHint to fail
+	* end up need to make the whole thing in a immediate function
+
+	Continuous Integration
+	* Make sure we have a known good build
+	* set up the integration branch
+
+Ch01 E04
+	
+	Continuous Integration Setup
+	* having everybody's work integrated
+	* make sure the build is always working well
+		- if something doesn't work -> it's your fault, cause you alway integrate with known good build
