@@ -77,3 +77,50 @@ Ch01 E04
 	* having everybody's work integrated
 	* make sure the build is always working well
 		- if something doesn't work -> it's your fault, cause you alway integrate with known good build
+
+	Setting up Build Server
+	* use a Windows Machine on Mac VMWare
+	* Share folder as a way to share repository
+	* git clone from Mac's repository
+	* to build on windows 
+		- install git
+		- clone repository
+		- install node
+		- create bat file
+
+	For creating an integration branch
+	* just git checkout integration
+
+Ch01 E05
+
+	Cheat integration
+	* create a jake task call Integrate, and integrate will depend on default task
+	* use manual instructions
+		- Make sure git status is clean
+		- Build on the integration box
+			* walk over to integration box
+			* git pull
+			* jake
+			* if jake fails, stop! try again
+		- git check out integration
+		- git merge master --no-ff --log
+		- git checkout master
+
+	Always make sure you have a good build
+
+	Make build fail when lint failed
+
+	desc("Lint everything");
+	task("lint", ["nodeVersion"], function() {
+		var lint = require("./build/lint/lint_runner.js");
+
+		var javascriptFiles = new jake.FileList();
+		javascriptFiles.include("**/*.js");
+		javascriptFiles.exclude("node_modules");
+		var options = nodeLintOptions();
+		var passed = lint.validateFileList(javascriptFiles.toArray(), options, {});
+		if (!passed) fail("Lint failed");
+	});
+
+	use gitk to make sure we are doing continuous integration correctly
+
