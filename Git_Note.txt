@@ -147,7 +147,35 @@ Pro Git
 1.7 Summary
 
 2. Git Basics
+
+	* covers all basic commands
+	* configure/initialize repository
+	* begin/stop tracking files
+	* stage/commit changes
+	* ignore files
+	* file patterns
+	* undo mistakes
+	* browse history of the project
+	* view changes between commits
+	* push/pull from remote repository
+
 2.1 Getting a Git Repository
+
+	Two ways to get a git repository
+	* add an existing directory into Git
+	* clone an respository from remote
+
+	git init
+	* start tracking files in the existing directory
+	* create .git folder
+	* this is a skeleton
+	* to start tracking
+		- git add *.c
+		- git add REAMME
+		- git commit -m 'initial commit'
+
+	
+
 2.2 Recording Changes to the Repository
 2.3 Viewing the Commit History
 2.4 Undoing Things
