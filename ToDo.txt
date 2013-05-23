@@ -1,5 +1,6 @@
 TODO:
 - Personal
+  * before May 28 need to enter all the time for May
   * Church bulletin
 - Work
   * Notificaiton TeamA Branch

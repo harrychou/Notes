@@ -26,6 +26,8 @@ Scope:
 
 ## UI
 
+Josephine working on it
+
 ## New Notification Types
 
 Plan Change Confirmation

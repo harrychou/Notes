@@ -61,11 +61,89 @@ Pro Git
 		- Git more like a mini filesystem with some incredibly powerful tools built on top of it
 		- the benefits will be covered when discussing Git branching
 
-  Nearly Every Operation Is Local http://git-scm.com/book/en/Getting-Started-Git-Basics#Nearly-Every-Operation-Is-Local
+  Nearly Every Operation Is Local 
+  * no need to have a remote server
+  * you can do everything and enjoy the benefit of version control
+  * fast - encouraged to check in
+
+  Git Integrity
+  * everything stored by checksum
+  	- all changes are definitely tracked by Git
+	* You can’t lose information in transit or get file corruption without Git being able to detect it.
+	* SHA-1 hash
+		- 40-char string
+		- calculated based on the contents of a file or directory structure of Git
+		- ex: 24b9da6552252987aa493b52f8696cd6d3b00373
+	* Git store everything based on the hash string (which represents content) rather than file name
+
+	Git only add data to repository
+	* everything is undoable
+	* very hard to lose data in Git
+
+	Three state the files can reside in
+	* three states
+		- commited: safely saved to git database
+		- modified
+		- staged: marked a modified file in its version to go into commited snapshot
+	* three main sections http://git-scm.com/figures/18333fig0106-tn.png
+		- working directory
+			* single checkout of one version
+			* pulled out of compressed database from Git repository
+		- staging area
+			* a simple file
+			* store information about what will go into next commit
+			* aka: index
+		- git directory (repository)
+			* where git store metadata
+			* database
+			* copied to all repositories
 
 1.4 Installing Git
+
+	* from source
+	* on Linux
+	* on Mac
+	* on Windows
+
 1.5 First-Time Git Setup
+
+	one-time setup, but can update anytime
+
+	git config
+	* main tool to control Git
+	* tool to setup variables
+	* the info are stored in three places:
+		(more specific place trumps the general one)
+		- /etc/gitcofnig
+			* git config --system
+			* shared by all users
+			* C:\Program Files (x86)\Git\etc\gitconfig
+		- ~/.gitconfig
+			* C:\Users\c00522\.gitconfig
+			* only for you
+			* git config --global
+		- .git/config
+			* only for that repository
+
+	Things to config
+	* identity
+		- git config --global user.name "Harry Chou"
+		- git config --global user.email "harrychou@gmail.com"
+	* editor
+		- git config --global core.editor emacs
+	* diff
+		- git config --global merge.tool vimdiff
+
+	display configs
+	* git config --list
+	* git config re
+
 1.6 Getting Help
+
+	git help <verb>
+	git <verb> --help
+	man git-<verb>
+
 1.7 Summary
 
 2. Git Basics
