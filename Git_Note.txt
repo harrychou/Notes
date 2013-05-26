@@ -279,9 +279,51 @@ Pro Git
 	  git rm file_from
 	  git add file_to
 	* Git does not store rename file in metadata, git only try to figure that out after the fact
-	* that means, you can rename using another tool and (git rm) (git add)
+	* that means, you can rename using another tool and (git rm) (git add) to save to repository
 
 2.3 Viewing the Commit History
+
+	viewing the history of Git repository
+	* git log
+		- show all history with checksum, author , date
+		- show in reverse order
+	* git log -p -2
+		- last 2 commits
+		- -p show all diff
+		- useful for code review and stuff
+	* git log -U1 --word-diff
+		- U1, show diff output of only one line
+		- word-diff, show word difference
+		  [-  ...  -] or {+  ....  +}
+    * git log --stat
+    	- shows the history with summary of 
+    	- # of files changes...
+    * git log --pretty=oneline|short|full|fuller
+    	- change the format 
+    * custom format
+      $ git log --pretty=format:"%h - %an, %ar : %s"
+      format options:
+      	%H  Commit hash
+		%h  Abbreviated commit hash
+		%T  Tree hash
+		%t  Abbreviated tree hash
+		%P  Parent hashes
+		%p  Abbreviated parent hashes
+		%an Author name
+		%ae Author e-mail
+		%ad Author date (format respects the --date= option)
+		%ar Author date, relative
+		%cn Committer name
+		%ce Committer email
+		%cd Committer date
+		%cr Committer date, relative
+		%s  Subject
+	* author vs commiter
+		- author: who wrote the patch
+		- commiter: who last applied the patch
+	* 
+
+
 2.4 Undoing Things
 2.5 Working with Remotes
 2.6 Tagging
