@@ -321,11 +321,84 @@ Pro Git
 	* author vs commiter
 		- author: who wrote the patch
 		- commiter: who last applied the patch
-	* 
+	* to view log with graphi output
+    git log --pretty=format:"%h %s" --graph
 
+	Limiting log output
+	* --since=2.weeks
+	* --until=2.weeks
+	* --author
+	* --committer
+	* example:
+		git log --pretty="%h - %s" --author=gitster --since="2008-10-01" \
+   --before="2008-11-01" --no-merges -- t/ 
+		want to see which commits modifying test files in the Git source code history 
+ 		were committed by Junio Hamano in the month of October 2008 and were not merges, 
+
+	use gitk
+	* shows what git log shows
+	* nice graph for ancestor
+	* show diff on bottom left
 
 2.4 Undoing Things
+
+	How to get back to history?
+	* warning: may lose work (one of the few area in Git)
+
+	To Amend a commit
+	* git commit -m 'initial commit'
+		git add forgotten_file
+		git commit --amend
+	* this will forget the first commit and use the second commit as the only commit
+	* can also use to change commit message
+	
+	Unstage a staged file
+	* if you type git add ., but realize you want to keep modify one file
+	* git reset HEAD filename
+
+	Unmodify a modified file
+	* if you want to revert the file back to what you first get from repository
+	* git checkout -- filename
+	* this will actually get rid of whatever you've changed
+	* if want to keep a record somehow, use branch or stash
+
 2.5 Working with Remotes
+
+	Remote Repository
+	* a repository that is hosted somewhere else (internet or some other machines)
+	* can have many remote repositories
+	* each of them can be read-only or read-write
+	* managing remote repositories
+		- add remote repository
+		- remove ....
+		- managing remote branches and define tracked or not
+
+	git remote
+	* by default show all the defined remotes
+	* -v to show more info
+	* show multiple remotes, withonly one with SSH for pushing to
+		- this is to allow pulling from other branches, and pushing only to one
+
+	to add a new remote repository
+	* git remote add shortname url
+
+	to get stuff from a remote repository
+	* git fetch remote-name
+		- pull down all data from the remote project that does not available locally
+		- we will have local reference to all branches available remotely
+		- we can then merge or inspect the branches
+	* if you cloned the repsitory, you have 'origin' as the remote repository
+	* fetch won't modify local work directory
+		--> you have to merge it manually when OK
+	* you can have a branch setup to track remote branch
+		(this is the default behavior when you have git clone - local master is tracking 'origin' master)
+		in this case, you can use git pull to :
+		- pull data
+		- and merge automatically
+
+		
+If you have a branch set up to track a remote branch (see the next section and Chapter 3 for more information), you can use the git pull command to automatically fetch and then merge a remote branch into your current branch. This may be an easier or more comfortable workflow for you; and by default, the git clone command automatically sets up your local master branch to track the remote master branch on the server you cloned from (assuming the remote has a master branch). Running git pull generally fetches data from the server you originally cloned from and automatically tries to merge it into the code you’re currently working on.
+
 2.6 Tagging
 2.7 Tips and Tricks
 2.8 Summary
