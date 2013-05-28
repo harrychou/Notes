@@ -390,15 +390,18 @@ Pro Git
 	* if you cloned the repsitory, you have 'origin' as the remote repository
 	* fetch won't modify local work directory
 		--> you have to merge it manually when OK
+	
+	git pull
 	* you can have a branch setup to track remote branch
 		(this is the default behavior when you have git clone - local master is tracking 'origin' master)
 		in this case, you can use git pull to :
 		- pull data
 		- and merge automatically
-
-		
-If you have a branch set up to track a remote branch (see the next section and Chapter 3 for more information), you can use the git pull command to automatically fetch and then merge a remote branch into your current branch. This may be an easier or more comfortable workflow for you; and by default, the git clone command automatically sets up your local master branch to track the remote master branch on the server you cloned from (assuming the remote has a master branch). Running git pull generally fetches data from the server you originally cloned from and automatically tries to merge it into the code you’re currently working on.
-
+	* your local master branch is tracking remote 'orignin' master
+	
 2.6 Tagging
+
+
+
 2.7 Tips and Tricks
 2.8 Summary
