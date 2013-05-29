@@ -124,3 +124,87 @@ Ch01 E05
 
 	use gitk to make sure we are doing continuous integration correctly
 
+	the goal is to make sure Integration branch will never fail
+
+Ch02 E06
+
+	Done with integration:
+	If your build is slow, you have another problem, you should work on making it faster
+
+	server side testing
+	* create a server directory
+	* create server.js file
+
+	choose a framework of javascript TDD
+	* down to two library
+		- NodeUnit
+		- Mocha
+	* James has issue with BDD
+		- BDD is too verbose
+		- BDD started as a way to teach TDD
+		- BDD is too documentation-centric
+
+	start with NodeUnit
+
+Ch02 E07
+
+	NodeUnit setup
+	* create a new task in jakefile for testing
+	* npm install nodeunit
+
+	First running test
+
+	Change the reporter
+
+	make server.js export a function that returns a number
+	make the unit test tests whether the number is correctly returned
+
+Ch02 E08
+	
+	Should we abstract out the test framework?
+	* it's hard to abstract framework (testframe work tend to like to own the world)
+	* it's easy to abstract out library
+
+	use continuous integration script and check it in is better for team to collaborate
+	* IDE setup is not easy
+
+	to avoid problem of runnign nodeunit asynchronously
+	* we want to make sure test is successful before integrate
+
+	desc("Test everything");
+	task("test", [], function() {
+		var reporter = require("nodeunit").reporters["default"];
+		reporter.run(['src/server/_server_test.js'], null, function(failures) {
+			if (failures) fail("Tests failed");
+			complete();
+		});
+	}, {async: true});
+
+	* async to wait until complete() is called
+	* failure contains if test has any failure ...
+
+	0 assertion problem?
+	* test.equal instead of assert
+
+Ch02 E09
+
+	create a very simple HTTP server
+	* decided to use node.js default HTTP stuff
+
+	when doing TDD, you actually know what you might want
+	in doing spike, you just learn and try things
+
+	doing a spike
+
+Ch02 E10
+
+	spikes are kept in a folder for future reference
+
+	you can choose to lint spikes or not
+
+	test:
+	* use http get to make sure something is running at localhost:8080
+
+
+
+
