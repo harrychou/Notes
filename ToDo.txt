@@ -1,25 +1,24 @@
 TODO:
-- Personal
-  * before May 28 need to enter all the time for May
-  * Church bulletin
 - Work
+  * setup SMBDEV2, configure it
+  * ask Ray about the PRR and unsubscribe release
   * Notificaiton TeamA Branch
     - Setup Plan Change Notification
-  * SiteB unsubscribe change need to be taken out
+  * SiteB unsubscribe change can be taken out
+  * IE8 contract download issue
+  * WCF/API versioning
+    C:\Users\c00522\Desktop\Working Doc\Versioning_API_WCF_links.txt
+- Personal
+  * ask Grace & her mom to finalize Nia
+  * buy $50 gift card for Srini housewarning party
+  * Cynthia, Sunday sub-teaching
 - Notificaiton PRR
   * config file to cover
     \\smbapt-omf-01\umesh\CMI\Notification\Prod\NTS_Generator\NotificationGenerator.exe.config
   * make sure Team-A is updated
   
-
-- Prod Data Repair tool /f/jfor sending Prod responses without email address
-- Prod Data Repair tool for generator Siebel service size issue
-- Ask LaserFiche to refresh after stage is set
-- Once verified, ask Umesh to sync all servers for Notificaiton WCF service
 - have a config in DB to skip win services
 - have a database Nlog target
-- Beeline is offline, need to do it later
-- Invoice
 
 - (LATER) 
   Set sequence for ResponseID?
@@ -75,19 +74,4 @@ Phase II
 
 To be decided
   - verify if Geenrator switch from Email to StandardMail when email is empty
-
-
-
-DEL /F /Q /S \\smbapt-omf-01\umesh\CMI\Notification\Dev\NTS_Generator
-DEL /F /Q /S \\smbapt-omf-01\umesh\CMI\Notification\Dev\NTS_ResponseStatusProcessor
-DEL /F /Q /S \\smbapt-omf-01\umesh\CMI\Notification\Dev\NTS_Scheduler
-DEL /F /Q /S \\smbapt-omf-01\umesh\CMI\Notification\Dev\NTS_Sender
-DEL /F /Q /S \\smbapt-omf-01\umesh\CMI\Notification\Dev\WCFService  
-
-XCOPY C:\A\Notification\Constellation.OneWeb.Notification-Main\Constellation.OneWeb.Notification.Generator\bin\Debug \\smbapt-omf-01\umesh\CMI\Notification\Dev\NTS_Generator
-XCOPY C:\A\Notification\Constellation.OneWeb.Notification-Main\Constellation.OneWeb.ResponseStatusProcessor\bin\Debug \\smbapt-omf-01\umesh\CMI\Notification\Dev\NTS_ResponseStatusProcessor
-XCOPY C:\A\Notification\Constellation.OneWeb.Notification-Main\Constellation.OneWeb.Notification.Scheduler\bin\Debug \\smbapt-omf-01\umesh\CMI\Notification\Dev\NTS_Scheduler
-XCOPY C:\A\Notification\Constellation.OneWeb.Notification-Main\Constellation.OneWeb.Notification.Sender\bin\Debug \\smbapt-omf-01\umesh\CMI\Notification\Dev\NTS_Sender
-XCOPY /s /y C:\A\Notification\Constellation.OneWeb.Notification-Main\Constellation.OneWeb.Notification.Service \\smbapt-omf-01\umesh\CMI\Notification\Dev\WCFService
-
 

@@ -397,11 +397,171 @@ Pro Git
 		in this case, you can use git pull to :
 		- pull data
 		- and merge automatically
+		- and checkout to workign directory
 	* your local master branch is tracking remote 'orignin' master
 	
+	git push [remote-name] [branch-name]
+	* push your work upstream
+	* git push origin master 
+		(push my master branch back to remote-origin)
+	* need write permission
+	* cannot have more than two persons push at the same time
+	* if someone else alreay pushed, your push will be rejected
+		- you have to pull first and merge
+
+	inspectig remote
+	* to find more information about a remote
+		git remote show origin
+	* sample output
+		remote origin
+	  Fetch URL: https://github.com/harrychou/Notes.git
+	  Push  URL: https://github.com/harrychou/Notes.git
+	  HEAD branch: master
+	  Remote branch:
+	    master tracked
+	  Local branch configured for 'git pull':
+	    master merges with remote master
+	  Local ref configured for 'git push':
+	    master pushes to master (up to date)
+	* other info are shown too
+
+	Removing and Renaming Remotes
+	* git remote rename to change remote's shortname
+	* will change the reference of brannch -> pb/master is now at paul/master.
+	* to remove
+		git remote rm shortname
+		- used when stop using a mirror or drop a contributor 
+
 2.6 Tagging
 
+	Tagging
+	* also available in other VCSs
+	* mark a specific point in history as important
+	* generally used for marking a release point
 
+	List all the tags
+	* git tag
+	* git tag -l 'v1.4.2.*'
+
+	Types of tags
+	* lightweight
+		- just like a branch that doesn't change
+		- just a point of a specific commit
+	* annotated (recommended for more info)
+		- stored as full objects
+		- checksumed with all info (email, tagname, date)
+		- have detailed message
+		- can be signed and verified by GNU Privacy Guard
+
+	Annotated tags
+	* to create
+		git tag -a v1.4 -m 'comment'
+	* to view the tag
+		git show v1.4
+		- tagger
+		- date
+		- version ...
+
+	signed tags
+	* to sing a tag
+		git tag -s v1.5 -m 'my signed 1.5 tag'
+	* use GPG to sign
+	* git show v1.5
+		- will show PGP signature
+	* you can later 'verify' the tag
+
+	lightweight tags
+	* basically the commit checksum stored in a file — no other information is kept
+	* to create
+		git tag v1.4.lw
+	* git show v1.4 
+		will only show simple info
+
+	verify tags
+	* git tag -v [tag-name]
+	* need the signer’s public key in your keyring for this to work properly
+	* if no signer’s public key, you get gpg error
+
+	tag a past commit
+	* git tag -a v1.2 -m 'comment' 964f16d36dfccde844893cac5b347e7b3d44abbc
+		- 964f16d36dfccde844893cac5b347e7b3d44abbc is the checksum of the commit
+	* to get the list of commit
+		git log --pretty=oneline
+
+	by default, tags are not pushed to remote
+	* to push a tag you have to use
+		git push origin v1.5
+	* to push mulitple tags
+		git push origin --tags	
 
 2.7 Tips and Tricks
+
+	Tips and Tricks to make using Git easier
+	* just good to know, don't have to do these
+	* Bash shell auto completion
+		- 
+
+Auto-Completion
+If you use the Bash shell, Git comes with a nice auto-completion script you can enable. Download the Git source code, and look in the contrib/completion directory; there should be a file called git-completion.bash. Copy this file to your home directory, and add this to your .bashrc file:
+
+source ~/.git-completion.bash
+If you want to set up Git to automatically have Bash shell completion for all users, copy this script to the /opt/local/etc/bash_completion.d directory on Mac systems or to the /etc/bash_completion.d/ directory on Linux systems. This is a directory of scripts that Bash will automatically load to provide shell completions.
+
+If you’re using Windows with Git Bash, which is the default when installing Git on Windows with msysGit, auto-completion should be preconfigured.
+
+Press the Tab key when you’re writing a Git command, and it should return a set of suggestions for you to pick from:
+
+$ git co<tab><tab>
+commit config
+In this case, typing git co and then pressing the Tab key twice suggests commit and config. Adding m<tab> completes git commit automatically.
+
+This also works with options, which is probably more useful. For instance, if you’re running a git log command and can’t remember one of the options, you can start typing it and press Tab to see what matches:
+
+$ git log --s<tab>
+--shortstat  --since=  --src-prefix=  --stat   --summary
+That’s a pretty nice trick and may save you some time and documentation reading.
+
+Git Aliases
+Git doesn’t infer your command if you type it in partially. If you don’t want to type the entire text of each of the Git commands, you can easily set up an alias for each command using git config. Here are a couple of examples you may want to set up:
+
+$ git config --global alias.co checkout
+$ git config --global alias.br branch
+$ git config --global alias.ci commit
+$ git config --global alias.st status
+This means that, for example, instead of typing git commit, you just need to type git ci. As you go on using Git, you’ll probably use other commands frequently as well; in this case, don’t hesitate to create new aliases.
+
+This technique can also be very useful in creating commands that you think should exist. For example, to correct the usability problem you encountered with unstaging a file, you can add your own unstage alias to Git:
+
+$ git config --global alias.unstage 'reset HEAD --'
+This makes the following two commands equivalent:
+
+$ git unstage fileA
+$ git reset HEAD fileA
+This seems a bit clearer. It’s also common to add a last command, like this:
+
+$ git config --global alias.last 'log -1 HEAD'
+This way, you can see the last commit easily:
+
+$ git last
+commit 66938dae3329c7aebe598c2246a8e6af90d04646
+Author: Josh Goebel <dreamer3@example.com>
+Date:   Tue Aug 26 19:48:51 2008 +0800
+
+    test for current head
+
+    Signed-off-by: Scott Chacon <schacon@example.com>
+As you can tell, Git simply replaces the new command with whatever you alias it to. However, maybe you want to run an external command, rather than a Git subcommand. In that case, you start the command with a ! character. This is useful if you write your own tools that work with a Git repository. We can demonstrate by aliasing git visual to run gitk:
+
+$ git config --global alias.visual '!gitk'	
+
 2.8 Summary
+
+
+At this point, you can do all the basic local Git operations — creating or cloning a repository, making changes, staging and committing those changes, and viewing the history of all the changes the repository has been through. Next, we’ll cover Git’s killer feature: its branching model.
+
+
+Chapter 3
+Git Branching
+Nearly every VCS has some form of branching support. Branching means you diverge from the main line of development and continue to do work without messing with that main line. In many VCS tools, this is a somewhat expensive process, often requiring you to create a new copy of your source code directory, which can take a long time for large projects.
+
+Some people refer to the branching model in Git as its “killer feature” , and it certainly sets Git apart in the VCS community. Why is it so special? The way Git branches is incredibly lightweight, making branching operations nearly instantaneous and switching back and forth between branches generally just as fast. Unlike many other VCSs, Git encourages a workflow that branches and merges often, even multiple times in a day. Understanding and mastering this feature gives you a powerful and unique tool and can literally change the way that you develop.

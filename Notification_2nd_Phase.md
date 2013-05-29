@@ -43,16 +43,28 @@ Plan Change Confirmation
 	
 Environment Disclosure (ED)
 
+* What is the existing process?
+  - Currently, it is all manual that James creates a list of recipients/addresses from Siebel (?) based on the market. Then, he gives the list and the EDS document to Fulfillment team to send it out to all customers in the list.
+* New Process
+  - I think the new process should be for James to ad-hoc (or pre-defined) pick a market (or market hierarchy level) and also upload the EDS document (see the example above). Then, he can push a button and the list will be retrieved from Siebel or SMBDB and notification tasks generated to be processed.
 * Is it a separate notificaiton or just an attachment?
-	- Example: every quarter, a ED is sent out to a specific market, in specific frequent
+	- right now it is always paper letter
+  - in the future, we might want to support digital email (html email or attachment?)
 * Where can I find a sample doc?
-	- no, very static information, ... Canada, average variable plan ... 
+	- very static information, ... Canada, average variable plan ... 
+  - see C:\Users\c00522\Desktop\Working Doc\_Notification_PhaseII\MECO Information Disclosure Label 201304.doc
 * Should we save it in LaserFiche? Not associate with customer? Or, each customer got a separate copy?
+  - we don't have to, since we've saved msg file already
 
 Reject Notice
 
 * When do we reject? 
 	- Utility reject
+  - we know it is status 55
+    * how about 56
+  - what previous statuses can become 55
+    * only 50?
+    * how about others (Siebel processing error?)
 * Which apps are involved? Who initiate the process?
 * Which Status signals reject?
 	- 55 (Enrollment Reject)
