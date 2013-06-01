@@ -564,4 +564,52 @@ Chapter 3 Git Branching
 			* one tree for the contents of the directory with the file names that point to the files' blobs
 			* one commit object with pointer to the tree object and the commit data
 		- example: http://git-scm.com/figures/18333fig0301-tn.png
+			* commit object points to tree object, which points to 3 blobs
+			* each object has checksum size and additonal properties
+	* if new changes are added and committed
+		- new commit object created, points to a new tree object, point to the blobs changed
+			http://git-scm.com/figures/18333fig0302-tn.png
+		- the new commit object also points to the previous commit object
+	
+	branch
+	* branch is only a pointer to the 
+
+Chapter 3 Git Branching
+
+	all VCs have branching
+	* branching - used when diverge from the main line
+	* separate from the changes of main line
+	* often difficult for most VCs
+
+	Git's branching is the killer feature
+	* Git's branching is lightweight
+	* making branching very easy and instaneous
+	* Git encourse branching/merging as often as you like
+
+3.1 Git Branching - What a Branch Is
+
+	what is branch?
+	* first need to understand how Git stores its data - a series of snapshots
+	* when commit in Git, Git store a 'commit object' in database
+		- the commit object has a pointer to the snapshot of the staged content/author/metadata
+		- also, has pointer(s) to the parent commits
+		- first commit does not have parent commit
+		- multiple parents if it is a result of two or more branches
+	* example - three file directory
+		- first stage all three files 
+			* create checksums for each file (SHA-1)
+			* store the files as of current to staging (Git blobs)
+			* checksums are added to stage area
+		- when commit
+			* checksum directory and all sub-dirs
+			* store all three files to repoistory
+			* a commit object is created to the root project tree
+		- five objects are in Git repo now
+			* three blobs (one for each file)
+			* one tree for the contents of the directory with the file names that point to the files' blobs
+			* one commit object with pointer to the tree object and the commit data
+		- example: http://git-scm.com/figures/18333fig0301-tn.png
+ to the commit
+
+	
 
