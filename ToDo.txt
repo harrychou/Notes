@@ -1,41 +1,54 @@
 TODO:
+
 - Work
-  * setup SMBDEV2, configure it
-  * ask Ray about the PRR and unsubscribe release
-  * Notificaiton TeamA Branch
-    - Setup Plan Change Notification
-  * SiteB unsubscribe change can be taken out
-  * IE8 contract download issue
+  * Notificaiton Phase II
+    - give James/Team concerns about strick rule based stuff
+    - test why DB outage will stop/confuse the services
+    - increase the interval of service running
+    - have a way for a service to skip itself
+  * Help with Chris Haywood with setting up new Notification Status
+  * Notificaiton PRR
+    - ask Ray about the PRR and unsubscribe release
+    - config file to cover
+    - SiteB unsubscribe change can be taken out
+    \\smbapt-omf-01\umesh\CMI\Notification\Prod\NTS_Generator\NotificationGenerator.exe.config
   * WCF/API versioning
     C:\Users\c00522\Desktop\Working Doc\Versioning_API_WCF_links.txt
+  * IE8 contract download issue
+
 - Personal
-  * ask Grace & her mom to finalize Nia
-  * buy $50 gift card for Srini housewarning party
-  * Cynthia, Sunday sub-teaching
-- Notificaiton PRR
-  * config file to cover
-    \\smbapt-omf-01\umesh\CMI\Notification\Prod\NTS_Generator\NotificationGenerator.exe.config
-  * make sure Team-A is updated
-  
+  * make sure Grace finalize the dates for Niagara Fall (Sun-Tue or Thur-Sat)
+  * finalize Isaac summer plan
+  * help Isaac with computer programming
+  * finalize next year Chinese School BCPL location app
+  * finalize Chinese School calendar
+  * follow with Kristen about the missing check
+  * follow with Eugenia about new teacher/principal
+  * schedule meeting with teachers for next school year
+
+Stuff I am learning:
+- Git book
+- Javascript TDD
+- Parallel Programming
+  - ebook
+  - Pluralsight
+- Bash shell 
+- Powershell Scripting
+- SOA/Queue
+  - Rabbit MQ (AMQP)
+- How Browser works?
+- Need a Math?
+- Need a CompSci stuff?
+- Angular.js?
+
+Thoughts:   
 - have a config in DB to skip win services
 - have a database Nlog target
-
-- (LATER) 
-  Set sequence for ResponseID?
-
-- (DONE)
-- NTS seed data update
+- Set sequence for ResponseID?
 
 Daily:
-- check if Scheduler is running OK
-SELECT CASE EXECUTED_YN
-   WHEN 'N' THEN 'OK .... ' 
-   ELSE 'NOT OK .... Scheduler locked ' 
-END STATUS, EXECUTED_DATE FROM OLN.NTS_MARKET_NOTIFY_TYPE
 - Production Notificaiton Statistics
-- Retrial Statistics
 - Run data repair for email missing reponses
-- Keeps watching this field
 
 Weekly:
 - Monday
