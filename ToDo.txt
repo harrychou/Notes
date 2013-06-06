@@ -6,6 +6,8 @@ TODO:
     - test why DB outage will stop/confuse the services
     - increase the interval of service running
     - have a way for a service to skip itself
+    - fix BGE Gas not sending out ConfirmEmail issue
+    - scheduler is running slow ... should we stop using ResponseHistory?
   * Help with Chris Haywood with setting up new Notification Status
   * Notificaiton PRR
     - ask Ray about the PRR and unsubscribe release
