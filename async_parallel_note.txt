@@ -53,4 +53,28 @@ CLR Threading Note:
 
   Why multi-threads?
   - opportunity to scale by parallizing CPU bound oper
+	- wait on I/O work
+	- responsive UI (UI thread should have high priority)
 
+	Demo: UI responsiveness
+	- while doing Thread.Sleep(5000), the UI thread is not responsive
+	- cannot repaint itself
+
+	cost of multi-threading
+	- slower execution time on single core machine 
+		* context switching
+	- add complexity
+		* line of code
+		* readability
+		* debug
+		* test
+
+	starting a thread
+	- System.Threading.Thread
+		* construct by t= new Thread(Fuction)
+		* set t.Name, t.Priority
+		* t.Start()
+
+	
+
+	
