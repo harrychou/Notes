@@ -2,7 +2,10 @@ TODO:
 
 - Work
   * Notificaiton Phase II
-    - give James/Team concerns about strick rule based stuff
+    - allow On/Off/Pause
+    - discuss DB changes, modify code one DB change in place
+    - provide Notification Service methods for 
+
     - test why DB outage will stop/confuse the services
     - increase the interval of service running
     - have a way for a service to skip itself
@@ -19,18 +22,18 @@ TODO:
   * IE8 contract download issue
 
 - Personal
-  * make sure Grace finalize the dates for Niagara Fall (Sun-Tue or Thur-Sat)
+  * Chinese School
+    - Timesheet for May 
+    - finalize next year Chinese School BCPL location app
+    - follow with Eugenia about new teacher/principal
+    - finalize Chinese School calendar, send notice
+    - schedule meeting with teachers for next school year
   * finalize Isaac summer plan
   * help Isaac with computer programming
-  * finalize next year Chinese School BCPL location app
-  * finalize Chinese School calendar
-  * follow with Kristen about the missing check
-  * follow with Eugenia about new teacher/principal
-  * schedule meeting with teachers for next school year
 
 Stuff I am learning:
-- Git book
-- Javascript TDD
+- Git book - (need to wrap this up)
+- Javascript TDD (need to continue)
 - Parallel Programming
   - ebook
   - Pluralsight
