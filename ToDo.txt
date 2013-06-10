@@ -1,11 +1,15 @@
 TODO:
 
-Isaac Cup take in - baseball stuff
-Ski equipment to basement
-Tomorrow, Isaac change turtle's water
+- ASAP
+  * Clean up baseball stuff - Isaac Cup and glove ...
+  * Clean up Ski equipment - put in bag and stuff
+  * Isaac change turtle's water
+  * Write check for Taitung church
 
 - Work
   * Notificaiton Phase II
+    - for Chris, turn on the web service, hard code the result ...
+    - for Sheeja, give the skeleto
     - allow On/Off/Pause
     - discuss DB changes, modify code one DB change in place
     - provide Notification Service methods for 
@@ -27,8 +31,8 @@ Tomorrow, Isaac change turtle's water
 
 - Personal
   * Chinese School
-    - Timesheet for May 
-    - finalize next year Chinese School BCPL location app
+    - finalize next year's Chinese School BCPL location application
+    - July should receive next school year book
     - follow with Eugenia about new teacher/principal
     - finalize Chinese School calendar, send notice
     - schedule meeting with teachers for next school year

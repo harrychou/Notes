@@ -715,9 +715,44 @@ Chapter 3 Git Branching
 
 3.4 Branching Workflows
 
-
+	* workflows that are available because of lightweight merging/branching
+	* long runing branches approach
+		- have a set of branches that are always available
+		- merge between either one of the branches to aother branches 
+		- http://git-scm.com/figures/18333fig0319-tn.png
+	* topic branch approach
+		- have one or more stable branches, for others create topic branches
+		- topic branch:  
+			* a short-lived branch that you create and use for a single particular feature or related work. 
+			* rarely done with a VCS before because it’s generally too expensive to create and merge branches. 
+			* in Git it’s common to create, work on, merge, and delete branches several times a day.
+		- use topic branch to 
+			- quickly create new branch
+			- easily merge back and integrate the branch commits
+		- from http://git-scm.com/figures/18333fig0320-tn.png 
+			to http://git-scm.com/figures/18333fig0321-tn.png
+	* in summary: Git's branching/merging make all kinds of strategy extremely easy and flexible
 
 3.5 Remote Branches
+
+	* Remote branches 
+		- references to the state of branches on your remote repositories 
+		- can be viewed as local branches, except that you can’t move
+		- they’re moved automatically whenever you do any network communication
+		- remote branches act as bookmarks to remind you where the branches on your remote repositories were the last time you connected to them.
+	* remote branch name
+		- take the form (remote)/(branch)
+		- example: clone a repository from git.ourcompany.com is the remote repository
+			* Git automatically make the remote server 'origin'
+			* origin/master will point to remote master branch
+		- http://git-scm.com/figures/18333fig0322-tn.png
+	* while local is being worked on, remote master can be updated by other people's git push
+	* to sync up the work
+		- git fetch origin
+			to get the data from server origin
+		- http://git-scm.com/figures/18333fig0324-tn.png
+		- at that time, you need to merge you local master branch with the orgin/master 
+
 3.6 Rebasing
 3.7 Summary
 
