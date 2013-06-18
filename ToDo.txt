@@ -1,5 +1,9 @@
 TODO:
 
+- Notification Service ToDos:
+  Sheeja stuff
+  finish Welcome Package and Enrollment Notice
+
 - ASAP
   * Clean up baseball stuff - Isaac Cup and glove ...
   * Clean up Ski equipment - put in bag and stuff
@@ -9,7 +13,7 @@ TODO:
 - Work
   * Notificaiton Phase II
     - for Chris, turn on the web service, hard code the result ...
-    - for Sheeja, give the skeleto
+    - for Sheeja, give the skeleton for her to work on
     - allow On/Off/Pause
     - discuss DB changes, modify code one DB change in place
     - provide Notification Service methods for 
