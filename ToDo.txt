@@ -3,6 +3,8 @@ TODO:
 - Notification Service ToDos:
   Sheeja stuff
   finish Welcome Package and Enrollment Notice
+  ERCOT:
+  * Hyperlink approach or attachment docs?
 
 - ASAP
   * call man-shiow
